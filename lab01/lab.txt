@@ -1,0 +1,36 @@
+1)
+
+Encapsulation is a concept of OOP, it's used to only allow modification to an object to be done internally or via functions to avoid leaving access to objects attributes.
+
+The setter method is one of the special function used to interact with an object, it change the value of the attribute to the value given.
+
+The getter metohd is the other special function, that return the value of the attribute.
+
+this is a keyword used to refer to the object in its methods to avoid having problem with variable declaration this.x and x with x given as a parameter
+
+super is a keyword used to acces to a method of the parent class (in the concept of inheritance)
+
+Inheritance is a concept used in OOP that allo classes to inherit others, with the metods, to put them in group, for example a parent class Animal, with Dog and Cat that will inherit certain methods from Animal that would be the same. It permit to avoid creating multiple time the same method.
+
+Polymorphism refer to the ability of a variable to be different types, with the example of Shape the parent abstrac class, all the children class can be created with the type as Shape.
+
+The relation between inheritance and inclusion polymorphism is that inheritance is used in polymorphism to use the sub-classes from the abstract parent class.
+
+
+2)
+static variable is a variable that is not an instance of the object its present in all objects and only on exists
+
+static constant is a constant that can be accessed by all instances of a class
+
+static method is a method that can be accessed by all instances of a class
+
+static constant often have public visibility because they are constant and it does not pose a problem for it to be public
+
+
+5)
+
+the difference between == and equals is that == check the values, or the value of the attributes, while equals check if the two  things are the same, like not two instances of a class with the same attributes value.
+
+o1.equals(o2) equivalent hashcode(o1) == hashcode(o2)
+
+since the hashCode are unique if the hashcode of the two objects is the same it means that they are the same objects, thus it's equals
