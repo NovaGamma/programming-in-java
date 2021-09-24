@@ -6,7 +6,7 @@ public class LinkedListBasedImpl implements StackOfInts {
 
     @Override
     public int pop(){
-        if (isEmpty() == false){
+        if (!isEmpty()){
             numOfElems--;
             int to_return = start.elem;
             start = start.next;
@@ -18,7 +18,7 @@ public class LinkedListBasedImpl implements StackOfInts {
     @Override
     public void push(int x) {
         numOfElems++;
-        if (isEmpty() == false){
+        if (!isEmpty()){
             Node new_start = new Node(x);
             new_start.next = start;
             start = new_start;
@@ -35,7 +35,7 @@ public class LinkedListBasedImpl implements StackOfInts {
 
     @Override
     public int peek() {
-        if (isEmpty() == false) {
+        if (!isEmpty()) {
             return start.elem;
         }
         throw new IllegalStateException("The list is empty");

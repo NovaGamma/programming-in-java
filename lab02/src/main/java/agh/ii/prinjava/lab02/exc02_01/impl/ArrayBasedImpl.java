@@ -7,7 +7,8 @@ public class ArrayBasedImpl implements StackOfInts {
 
     @Override
     public int pop() {
-        if (isEmpty() == false){
+        if (!isEmpty()){
+            numOfElems--;
             int to_return = stack[0];
             stack = Arrays.copyOfRange(stack,1,stack.length-1);
             return to_return;
@@ -17,7 +18,15 @@ public class ArrayBasedImpl implements StackOfInts {
 
     @Override
     public void push(int x) {
-        throw new IllegalStateException("To be implemented");
+        numOfElems++;
+        if (!isEmpty()){
+            int[] new_stack = new int[numOfElems+1];
+            System.arraycopy(stack, 0, new_stack, 1, numOfElems + 1);
+            stack = new_stack;
+        }
+        else{
+            stack[0] = x;
+        }
     }
 
     @Override
@@ -27,7 +36,10 @@ public class ArrayBasedImpl implements StackOfInts {
 
     @Override
     public int peek() {
-        throw new IllegalStateException("To be implemented");
+        if (!isEmpty()){
+            return stack[0];
+        }
+        throw new IllegalStateException("The list is empty");
     }
 
     private int[] stack;
