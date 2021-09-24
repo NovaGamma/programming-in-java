@@ -11,42 +11,11 @@ package agh.ii.prinjava.lab02.lst02_11;
  *
  * @since Java 8
  */
-@FunctionalInterface
-interface I1 {
-    void apply();
-}
 
-/**
- * function: (int) -> void
- */
-@FunctionalInterface
-interface I2 {
-    void apply(int x);
-}
 
-/**
- * function: (int) -> int
- */
-@FunctionalInterface
-interface I3 {
-    int apply(int x);
-}
 
-/**
- * function: (int, int) -> void
- */
-@FunctionalInterface
-interface I4 {
-    void apply(int x, int y);
-}
 
-/**
- * function: (int, int) -> int
- */
-@FunctionalInterface
-interface I5 {
-    int apply(int x, int y);
-}
+
 
 public class Main {
     private static void demo1() {

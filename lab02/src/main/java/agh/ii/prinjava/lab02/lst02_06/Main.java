@@ -22,37 +22,14 @@ package agh.ii.prinjava.lab02.lst02_06;
  *
  * <p><i>Note</i>: abstract and final cannot go together (since it makes no sense)
  */
-abstract class Shape {
-    abstract double area();
 
-    public Shape() {
-    }
-}
 
-class Circle extends Shape {
-    private double r;
 
-    @Override
-    double area() {
-        System.out.println("Circle.area()");
-        return Math.PI * r * r;
-    }
-
-    public Circle(double r) {
-        this.r = r;
-    }
-}
 
 /**
  * No abstract methods, yet the class is to be considered abstract
  */
-abstract class ToBeConsideredAbstract {
-    int x;
 
-    void m1() {
-        System.out.println("ToBeConsideredAbstract.m1()");
-    }
-}
 
 public class Main {
     public static void main(String[] args) {
