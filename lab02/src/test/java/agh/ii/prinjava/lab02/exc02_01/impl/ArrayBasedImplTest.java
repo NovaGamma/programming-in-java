@@ -5,7 +5,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class ArrayBasedImplTest {
 
@@ -24,4 +24,23 @@ class ArrayBasedImplTest {
     void newStackIsEmpty() {
         assertTrue(stackOfInts.isEmpty());
     }
+
+    @Test
+    void peek_and_push() {
+        for (int i = 0; i<100; i++) {
+            stackOfInts.push(i);
+
+            assertEquals(i, stackOfInts.peek());
+        }
+    }
+
+    @Test
+    void pop() {
+        stackOfInts.push(1);
+        stackOfInts.push(2);
+
+        assertEquals(1, stackOfInts.pop());
+        assertEquals(2, stackOfInts.pop());
+    }
+
 }
