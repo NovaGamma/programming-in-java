@@ -18,7 +18,6 @@ public class ArrayBasedImpl implements StackOfInts {
 
     @Override
     public void push(int x) {
-        numOfElems++;
         if (!isEmpty()){
             int[] new_stack = new int[numOfElems+1];
             System.arraycopy(stack, 0, new_stack, 1, numOfElems + 1);
@@ -27,6 +26,7 @@ public class ArrayBasedImpl implements StackOfInts {
         else{
             stack[0] = x;
         }
+        numOfElems++;
     }
 
     @Override

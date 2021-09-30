@@ -17,7 +17,6 @@ public class LinkedListBasedImpl implements StackOfInts {
 
     @Override
     public void push(int x) {
-        numOfElems++;
         if (!isEmpty()){
             Node new_start = new Node(x);
             new_start.next = start;
@@ -26,6 +25,7 @@ public class LinkedListBasedImpl implements StackOfInts {
         else{
             start = new Node(x);
         }
+        numOfElems++;
     }
 
     @Override
