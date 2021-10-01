@@ -7,18 +7,7 @@ import java.io.Serializable;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-class NonSerializableClass1 {
-    private String name;
 
-    public NonSerializableClass1(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "NotSerializableClass1{" + "name='" + name + '\'' + '}';
-    }
-}
 
 /**
  * <i>Serialization</i> - a process/mechanism of converting object's state along with its class information
@@ -30,18 +19,7 @@ class NonSerializableClass1 {
  * <p>Serializable is only a marker interface - it simply allows the serialization mechanism to verify
  * that the class is able to be persisted
  */
-class SerializableCls1 implements Serializable {
-    private String name;
 
-    public SerializableCls1(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "SerializableCls1{" + "name='" + name + '\'' + '}';
-    }
-}
 
 /**
  * {@code transient} modifier prevents an instance variable from being serialized
@@ -50,62 +28,19 @@ class SerializableCls1 implements Serializable {
  * are meaningless when an object is reconstituted. Also, when an object keeps a cache of values,
  * it might be better to drop the cache and recompute it instead of storing it.
  */
-class SerializableCls2 implements Serializable {
-    private String name;
-    private transient int age; // <- a transient field, this will not be serialized (because it's not needed)
 
-    public SerializableCls2(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-
-    @Override
-    public String toString() {
-        return "SerializableCls2{" + "name='" + name + '\'' + ", age=" + age + '}';
-    }
-}
 
 /**
  * Not serializable because of a non-serializable field (nsc)
  */
-class NonSerializableCls2 implements Serializable {
-    private String name;
-    private NonSerializableClass1 nsc; // <- a field of non-serializable type
 
-    public NonSerializableCls2(String name, NonSerializableClass1 nsc) {
-        this.name = name;
-        this.nsc = nsc;
-    }
 
-    @Override
-    public String toString() {
-        return "NonSerializableCls2{" + "name='" + name + '\'' + ", nsc=" + nsc + '}';
-    }
-}
 
-class SerializableCls3 implements Serializable {
-    private String name;
-    private transient NonSerializableClass1 nsc; // <- since it's not serializable, it must be transient
-
-    public SerializableCls3(String name, NonSerializableClass1 nsc) {
-        this.name = name;
-        this.nsc = nsc;
-    }
-
-    @Override
-    public String toString() {
-        return "SerializableCls3{" + "name='" + name + '\'' + ", nsc=" + nsc + '}';
-    }
-}
 
 /**
  * Serializable because of the parent class (which is serializable)
  */
-class SerializableCls4 extends SerializableCls1 {
-    public SerializableCls4(String name) {
-        super(name);
-    }
-}
+
 
 public class Main {
     private static final String demoFileName = "objects.ser";

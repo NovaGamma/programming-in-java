@@ -4,6 +4,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
@@ -102,7 +103,28 @@ public class Main {
         }
     }
 
+    private static void increaseCall(){
+        String path = "nCall.txt";
+        int nCall;
+        try {
+            String[] lines = Files.readAllLines(Path.of(path), StandardCharsets.UTF_8).toArray(new String[0]);
+            String str = lines[0];
+            try{
+                Integer number = Integer.valueOf(str);
+                nCall = number;
+                nCall++;
+            }
+            catch (NumberFormatException ex) {
+                ex.printStackTrace();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void main(String[] args) {
+        increaseCall();
+
         // (write + read) + delete, byte-oriented
         demo1();
         demo2();

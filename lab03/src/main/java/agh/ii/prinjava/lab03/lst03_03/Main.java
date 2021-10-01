@@ -119,8 +119,4 @@ public class Main {
     }
 }
 
-class CheckedEx1 extends Exception {
-    public CheckedEx1() {
-        super("CheckedEx1 occurred");
-    }
-}
+

@@ -13,7 +13,7 @@ public class ArrayBasedImpl implements StackOfInts {
             stack = Arrays.copyOfRange(stack,1,stack.length-1);
             return to_return;
         }
-        throw new IllegalStateException("The list is empty");
+        throw new RuntimeException("The list is empty");
     }
 
     @Override
@@ -39,7 +39,7 @@ public class ArrayBasedImpl implements StackOfInts {
         if (!isEmpty()){
             return stack[0];
         }
-        throw new IllegalStateException("The list is empty");
+        throw new RuntimeException("The list is empty");
     }
 
     private int[] stack;

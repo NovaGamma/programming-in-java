@@ -156,11 +156,7 @@ public class Main {
  * @see <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html">Throwable</a>
  * @see <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Error.html">Error</a>
  */
-class Error1 extends Error { // A user-defined Error -- you should never do it!!!
-    public Error1() {
-        super("Error1 occurred");
-    }
-}
+
 
 /**
  * {@code RuntimeException} is the superclass of those exceptions that can be thrown
@@ -191,8 +187,4 @@ class Error1 extends Error { // A user-defined Error -- you should never do it!!
  * @see <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/RuntimeException.html">RuntimeException</a>
  * @see <a href="https://docs.oracle.com/javase/tutorial/essential/exceptions/runtime.html">Unchecked Exceptions-the Controversy</a>
  */
-class RunTimeEx1 extends RuntimeException {
-    public RunTimeEx1() {
-        super("RunTimeEx1 occurred");
-    }
-}
+

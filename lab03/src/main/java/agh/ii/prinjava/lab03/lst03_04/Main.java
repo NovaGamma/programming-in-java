@@ -14,26 +14,7 @@ package agh.ii.prinjava.lab03.lst03_04;
  * @see <a href="https://docs.oracle.com/javase/specs/jls/se17/html/jls-14.html#jls-14.20.3">try-with-resources</a>
  * @see <a href="https://www.yegor256.com/2017/08/08/raii-in-java.html">RAII in Java</a>
  */
-class Resource1 implements AutoCloseable {
 
-    /**
-     * Note: although the close method from {@link AutoCloseable} interface throws {@link Exception},
-     * we can throw NO exception at all as the methods are covariant with respect to the exceptions
-     */
-    @Override
-    public void close() {
-        System.out.println("Resource1.close()");
-    }
-
-    public void doStuff() throws ChEx1 {
-        System.out.println("Resource1.doStuff()");
-        throw new ChEx1();
-    }
-
-    Resource1() {
-        System.out.println("Resource1: the resource is being opened...");
-    }
-}
 
 public class Main {
     /**
@@ -153,26 +134,8 @@ public class Main {
     }
 }
 
-class Resource2 implements AutoCloseable {
 
-    @Override
-    public void close() throws ChEx2 {
-        System.out.println("Resource2.close()");
-        throw new ChEx2();
-    }
 
-    public void doStuff() throws ChEx2 {
-        System.out.println("Resource2.doStuff()");
-        throw new ChEx2();
-    }
 
-    public Resource2() {
-        System.out.println("Resource2: the resource is being opened...");
-    }
-}
 
-class ChEx1 extends Exception {
-}
 
-class ChEx2 extends Exception {
-}

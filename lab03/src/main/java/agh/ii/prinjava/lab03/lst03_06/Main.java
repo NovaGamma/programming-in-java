@@ -125,6 +125,43 @@ public class Main {
         }
     }
 
+    private static void nLines(){
+        try {
+            var lines = Files.readAllLines(Path.of(demoFileName1), StandardCharsets.UTF_8);
+            int number_of_lines = lines.size();
+            System.out.println("The number of lines is " + number_of_lines);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void nChar(){
+        try {
+            var lines = Files.readAllLines(Path.of(demoFileName1), StandardCharsets.UTF_8);
+            int counter = 0;
+            for (var line : lines) {
+                counter += line.length();
+            }
+            System.out.println("The number of character is " + counter);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void nWords(){
+        try {
+            var lines = Files.readAllLines(Path.of(demoFileName1), StandardCharsets.UTF_8);
+            int counter = 0;
+            for (var line : lines) {
+                String[] temp = line.split(" ");
+                counter += temp.length;
+            }
+            System.out.println("The number of character is " + counter);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void main(String[] args) {
         demo1();
         deleteDemoFile();

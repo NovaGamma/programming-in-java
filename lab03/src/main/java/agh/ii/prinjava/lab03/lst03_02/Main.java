@@ -164,14 +164,5 @@ public class Main {
  *
  * @see <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html">Exception</a>
  */
-class CheckedEx1 extends Exception {
-    public CheckedEx1() {
-        super("CheckedEx1 occurred");
-    }
-}
 
-class CheckedEx2 extends Exception {
-    public CheckedEx2() {
-        super("CheckedEx2 occurred");
-    }
-}
+
