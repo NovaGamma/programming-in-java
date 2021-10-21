@@ -9,7 +9,7 @@ public class MyStackDLLBImpl<E> implements MyStack<E> {
      */
     @Override
     public E pop() {
-        if(elems.numOfElems() != 0){
+        if(!isEmpty()){
             return elems.removeFirst();
         }
         else{
@@ -41,7 +41,7 @@ public class MyStackDLLBImpl<E> implements MyStack<E> {
      */
     @Override
     public E peek() {
-        if(elems.numOfElems() != 0){
+        if(!isEmpty()){
             return elems.getFirst();
         }
         else {

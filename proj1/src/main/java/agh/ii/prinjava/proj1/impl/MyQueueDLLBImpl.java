@@ -18,7 +18,7 @@ public class MyQueueDLLBImpl<E> implements MyQueue<E> {
      */
     @Override
     public E dequeue() {
-        if(elems.numOfElems() != 0){
+        if(!isEmpty()){
             return elems.removeLast();
         }
         else{
@@ -41,7 +41,7 @@ public class MyQueueDLLBImpl<E> implements MyQueue<E> {
      */
     @Override
     public E peek() {
-        if(elems.numOfElems() != 0){
+        if(!isEmpty()){
             return elems.getLastValue();
         }
         else {

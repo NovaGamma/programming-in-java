@@ -16,9 +16,7 @@ public class DLinkList<E> {
             first.prev = new_node;
             first = new_node;
         }
-        else{
-            first.elem = el;
-        }
+        first.elem = el;
     }
 
     /**
@@ -70,11 +68,19 @@ public class DLinkList<E> {
      * @return the first element of the doubly linked list
      */
     E removeFirst(){
-        Node<E> temp = first;
-        first.next.prev = null;
-        first = first.next;
-        temp.next = null;
-        return temp.elem;
+        if (first.elem != null) {
+            Node<E> temp = first;
+            E toReturn = temp.elem;
+            if (numOfElems() > 1) {
+                first.next.prev = null;
+                first = first.next;
+                temp.next = null;
+            }else {
+                first.elem = null;
+            }
+            return toReturn;
+        }
+        return null;
     }
 
     /**
@@ -83,9 +89,18 @@ public class DLinkList<E> {
      */
     E removeLast(){
         Node<E> last = getLast();
-        last.prev.next = null;
-        last.prev = null;
-        return last.elem;
+        if (last.elem != null) {
+            Node<E> temp = last;
+            E toReturn = temp.elem;
+            if (numOfElems() > 1) {
+                last.prev.next = null;
+                temp.prev = null;
+            }else {
+                last.elem = null;
+            }
+            return toReturn;
+        }
+        return null;
     }
 
 
@@ -97,11 +112,15 @@ public class DLinkList<E> {
     public String toString() {
         Node<E> temp = first;
         String tostring = "DLinkList{ ";
-        while(temp.next != null){
-            tostring += temp.elem + " / ";
+        if(numOfElems() != 0) {
+            tostring += temp.elem + " ";
             temp = temp.next;
+            while (temp != null) {
+                tostring += temp.elem + " ";
+                temp = temp.next;
+            }
         }
-        return tostring + " }";
+        return tostring + "}";
     }
 
     int numOfElems(){
@@ -125,5 +144,5 @@ public class DLinkList<E> {
         Node<T> prev;
     }
 
-    Node<E> first;
+    Node<E> first = new Node<>();
 }
