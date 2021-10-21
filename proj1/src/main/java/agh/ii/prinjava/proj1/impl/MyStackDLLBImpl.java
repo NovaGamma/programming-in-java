@@ -48,4 +48,9 @@ public class MyStackDLLBImpl<E> implements MyStack<E> {
             throw new RuntimeException("The Stack is Empty");
         }
     }
+
+    @Override
+    public String toString(){
+        return "Stack{" + elems.toString() + '}';
+    }
 }

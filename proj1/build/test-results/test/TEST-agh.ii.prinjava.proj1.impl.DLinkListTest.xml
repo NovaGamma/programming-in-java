@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="agh.ii.prinjava.proj1.impl.DLinkListTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-10-21T16:45:54" hostname="DESKTOP-IEGFBG7" time="0.065">
+  <properties/>
+  <testcase name="addFirst()" classname="agh.ii.prinjava.proj1.impl.DLinkListTest" time="0.056"/>
+  <testcase name="addLast()" classname="agh.ii.prinjava.proj1.impl.DLinkListTest" time="0.001"/>
+  <testcase name="removeFirst()" classname="agh.ii.prinjava.proj1.impl.DLinkListTest" time="0.002"/>
+  <testcase name="removeLast()" classname="agh.ii.prinjava.proj1.impl.DLinkListTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

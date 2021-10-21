@@ -48,4 +48,9 @@ public class MyQueueDLLBImpl<E> implements MyQueue<E> {
             throw new RuntimeException("The Stack is Empty");
         }
     }
+
+    @Override
+    public String toString(){
+        return "Queue{" + elems.toString() + '}';
+    }
 }
