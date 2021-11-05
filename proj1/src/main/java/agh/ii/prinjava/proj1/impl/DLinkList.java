@@ -5,7 +5,7 @@ public class DLinkList<E> {
     /**
      * function that add the given element at the beginning
      * of the doubly linked list
-     * if it's the first element of the list, a no new Node is created
+     * if it's the first element of the list, no new Node is created
      * @param el
      */
     void addFirst(E el){
@@ -113,8 +113,6 @@ public class DLinkList<E> {
         Node<E> temp = first;
         String tostring = "DLinkList{ ";
         if(numOfElems() != 0) {
-            tostring += temp.elem + " ";
-            temp = temp.next;
             while (temp != null) {
                 tostring += temp.elem + " ";
                 temp = temp.next;
