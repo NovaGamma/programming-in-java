@@ -196,6 +196,8 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        boolean[] lBool = {true,true,true,false,false};
+        Stream<Integer> stream = Stream.iterate(0,n -> n+2);
         demo1();
         demo2();
         demo3();

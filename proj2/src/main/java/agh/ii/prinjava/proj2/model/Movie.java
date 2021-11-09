@@ -1,11 +1,11 @@
-package agh.ii.prinjava.lab07.model;
+package agh.ii.prinjava.proj2.model;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public record Movie(int rank, double rating, String title, int year, String rated, int runtime,
-                    List<String> genre, List<String> director,
+                    List<String> genre, List<String> directors,
                     List<String> actors, String production) {
 
     /**
@@ -26,6 +26,8 @@ public record Movie(int rank, double rating, String title, int year, String rate
         }
         vals.add(rawLine.substring(start));
 
+        String splitPtn = ",\\s*";
+
         return new Movie(
                 Integer.parseInt(vals.get(0)),
                 Double.parseDouble(vals.get(1)),
@@ -33,9 +35,9 @@ public record Movie(int rank, double rating, String title, int year, String rate
                 Integer.parseInt(vals.get(3)),
                 trimQuotes(vals.get(4)),
                 Integer.parseInt(vals.get(5)),
-                Arrays.asList(trimQuotes(vals.get(6)).split(",")),
-                Arrays.asList(trimQuotes(vals.get(7)).split(",")),
-                Arrays.asList(trimQuotes(vals.get(8)).split(",")),
+                Arrays.asList(trimQuotes(vals.get(6)).split(splitPtn)),
+                Arrays.asList(trimQuotes(vals.get(7)).split(splitPtn)),
+                Arrays.asList(trimQuotes(vals.get(8)).split(splitPtn)),
                 trimQuotes(vals.get(9))
         );
     }

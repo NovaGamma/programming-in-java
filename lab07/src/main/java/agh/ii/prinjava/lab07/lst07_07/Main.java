@@ -96,17 +96,49 @@ public class Main {
         System.out.println("\ndemo5...");
         final Optional<List<Movie>> optMovies = ImdbTop250.movies();
         long numOfDirectors = optMovies.orElseThrow().stream()
-                .flatMap(m -> Arrays.stream(m.director().split(",")))
+                //.flatMap(m -> Arrays.stream(m.director())
                 .collect(Collectors.toSet())
                 .size();
         System.out.println("Total number of directors: " + numOfDirectors);
     }
 
+    private static void question1(){
+        final Optional<List<Movie>> optMovies = ImdbTop250.movies();
+        long nActors = optMovies.orElseThrow().stream()
+                .flatMap(m -> m.actors().stream())
+                .collect(Collectors.toSet())
+                .size();
+        System.out.println("Number of actors is : " + nActors);
+    }
+
+    private static void question2(){
+        //total number of movies rated PG-13
+        final Optional<List<Movie>> optMovies = ImdbTop250.movies();
+        long nPG13 = optMovies.orElseThrow().stream()
+                .flatMap(m -> Arrays.stream(new String[]{m.rated()}))
+                .collect(Collectors.toSet())
+                .size();
+        System.out.println("Number of movie rated PG-13 is : " + nPG13);
+    }
+
+    private static void question3(){
+        //total number of genres
+        final Optional<List<Movie>> optMovies = ImdbTop250.movies();
+        long nGenres = optMovies.orElseThrow().stream()
+                .flatMap(m -> m.genre().stream())
+                .collect(Collectors.toSet())
+                .size();
+        System.out.println("Number of genres is : " + nGenres);
+    }
+
     public static void main(String[] args) {
-        demo1();
-        demo2();
-        demo3();
-        demo4();
-        demo5();
+        question1();
+        question2();
+        question3();
+        //demo1();
+        //demo2();
+        //demo3();
+        //demo4();
+        //demo5();
     }
 }
