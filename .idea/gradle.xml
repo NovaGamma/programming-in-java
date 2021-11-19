@@ -20,9 +20,11 @@
             <option value="$PROJECT_DIR$/lab05" />
             <option value="$PROJECT_DIR$/lab06" />
             <option value="$PROJECT_DIR$/lab07" />
+            <option value="$PROJECT_DIR$/lab08" />
             <option value="$PROJECT_DIR$/main" />
             <option value="$PROJECT_DIR$/proj1" />
             <option value="$PROJECT_DIR$/proj2" />
+            <option value="$PROJECT_DIR$/proj2_modified" />
           </set>
         </option>
       </GradleProjectSettings>

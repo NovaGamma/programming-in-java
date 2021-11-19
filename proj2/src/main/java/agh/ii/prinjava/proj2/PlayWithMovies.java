@@ -104,8 +104,7 @@ interface PlayWithMovies {
     static List<Map.Entry<String, Long>> ex09() {
         final Optional<List<Movie>> optMovies = ImdbTop250.movies();
         return optMovies.orElseThrow().stream()
-                .map(Utils::oneToManyByActorDuo)
-                .flatMap(Collection::stream)
+                .flatMap(m -> Utils.oneToManyByActorDuo(m).stream())
                 .collect(Collectors.groupingBy(movie -> movie.actors().get(0),Collectors.counting()))
                 .entrySet().stream()
                 .sorted((e1,e2) -> Long.compare(e2.getValue(),e1.getValue()))
